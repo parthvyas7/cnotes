@@ -9,8 +9,8 @@ const NoteSection = (props) => {
     const { notes, getNotes, editNote } = context;
     let navigate = useNavigate();
     useEffect(() => {
-        const at = localStorage.getItem('auth-token')
-        if (at !== 'undefined') {
+        let at = localStorage.getItem("auth-token")
+        if (at) {
             getNotes()
         }
         else {
