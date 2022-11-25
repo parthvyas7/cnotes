@@ -1,11 +1,11 @@
-import Card from 'react-bootstrap/Card';
 import { useContext } from 'react'
 import noteContext from "../context/notes/noteContext"
+import Card from 'react-bootstrap/Card';
 
-function Notes(props) {
+const Notes = (props) => {
     const context = useContext(noteContext);
-    const { note, updateNote } = props;
     const { deleteNote } = context;
+    const { note, updateNote } = props;
     return (
         <div className="col-md-3">
             <Card className="my-3">

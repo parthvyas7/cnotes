@@ -1,7 +1,6 @@
 import React from 'react';
 import OffcanvasNavbar from './components/Navbar';
 import Home from './components/Home';
-import About from './components/About'; 
 import NoteState from './context/notes/NoteState';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -16,7 +15,6 @@ function App() {
     <OffcanvasNavbar/>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/about" element={<About />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/signup" element={<Signup />}/>
       </Routes>
