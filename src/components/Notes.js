@@ -14,8 +14,8 @@ const Notes = (props) => {
                     <Card.Text>
                         {note.description}
                     </Card.Text>
-                    <i className="bi bi-pencil-square" onClick={() => { updateNote(note) }} />
-                    <i className="bi bi-trash" onClick={() => { deleteNote(note._id) }} />
+                    <i className="bi bi-pencil-square" onClick={() => { updateNote(note)}} />
+                    <i className="bi bi-trash" onClick={() => { deleteNote(note._id); props.showAlert("Deleted!", "success")}} />
                 </Card.Body>
                 <Card.Footer>
                     <small className="text-muted">{note.tag}</small>

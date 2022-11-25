@@ -2,12 +2,20 @@ import Notes from "./Notes"
 import noteContext from "../context/notes/noteContext"
 import { useContext, useEffect, useRef, useState } from 'react'
 import AddNote from './AddNote';
+import { useNavigate } from 'react-router-dom'
 
-const NoteSection = () => {
+const NoteSection = (props) => {
     const context = useContext(noteContext);
     const { notes, getNotes, editNote } = context;
+    let navigate = useNavigate();
     useEffect(() => {
-        getNotes()
+        const at = localStorage.getItem('auth-token')
+        if (at !== 'undefined') {
+            getNotes()
+        }
+        else {
+            navigate("/login");
+        }
         // eslint-disable-next-line
     }, [])
     const ref = useRef(null)
@@ -22,6 +30,7 @@ const NoteSection = () => {
     const handleClick = (e) => {
         editNote(note.id, note.etitle, note.edescription, note.etag)
         refClose.current.click();
+        props.showAlert("Updated!", "success")
     }
 
     const onChange = (e) => {
@@ -29,7 +38,7 @@ const NoteSection = () => {
     }
     return (
         <>
-            <AddNote />
+            <AddNote showAlert={props.showAlert} />
             <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Yo yo
             </button>
@@ -58,8 +67,8 @@ const NoteSection = () => {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" ref={refClose}>Close</button>
-                            <button onClick={handleClick} type="button" className="btn btn-primary" disabled={note.etitle.length < 5 || note.edescription.length < 5} >Update</button>
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" ref={refClose}>Band kru?</button>
+                            <button onClick={handleClick} type="button" className="btn btn-primary" disabled={note.etitle.length < 5 || note.edescription.length < 5} >Badlu?</button>
                         </div>
                     </div>
                 </div>
@@ -71,7 +80,7 @@ const NoteSection = () => {
                     {notes.length === 0 && 'Koi pharre nhi h'}
                 </div>
                 {notes.map((note) => {
-                    return <Notes note={note} key={note._id} updateNote={updateNote} />
+                    return <Notes note={note} key={note._id} updateNote={updateNote} showAlert={props.showAlert} />
                 })}
             </div>
         </>

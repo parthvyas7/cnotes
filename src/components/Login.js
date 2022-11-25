@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     let navigate = useNavigate();
+    const { email, password } = credentials
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,17 +18,17 @@ const Login = (props) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email: credentials.email, password: credentials.password })
+            body: JSON.stringify({ email, password })
         });
         const json = await response.json()
-        console.log(json);
         if (json.success) {
             // Save the auth token and redirect
-            localStorage.setItem('token', json.authtoken);
+            localStorage.setItem('auth-token', json.authToken);
+            props.showAlert("Logged in successfully!", "success")
             navigate("/");
         }
         else {
-            alert("Invalid credentials");
+            props.showAlert("Invalid details!", "danger")
         }
     }
 
@@ -37,24 +38,24 @@ const Login = (props) => {
     return (
         <>
             <Container>
-                <h1 className='display-1'>Aur bhai kese ho?</h1>
+                <h1 className='display-1'>Aur kese ho?</h1>
                 <Form onSubmit={handleSubmit}>
                     <Col xs="auto">
-                        <Form.Label htmlFor="inlineFormInput" visuallyHidden>
+                        <Form.Label htmlFor="email" visuallyHidden>
                             Email address
                         </Form.Label>
                         <InputGroup className="mb-2">
                             <InputGroup.Text><i className="bi bi-person"></i></InputGroup.Text>
-                            <Form.Control id="inlineFormInputGroup" placeholder="Email" value={credentials.email} onChange={onChange} />
+                            <Form.Control type="email" id="email" name="email" placeholder="Email" value={email} onChange={onChange} />
                         </InputGroup>
                     </Col>
                     <Col xs="auto">
-                        <Form.Label htmlFor="inlineFormInputGroup" visuallyHidden>
+                        <Form.Label htmlFor="password" visuallyHidden>
                             Password
                         </Form.Label>
                         <InputGroup className="mb-2">
                             <InputGroup.Text><i className="bi bi-key"></i></InputGroup.Text>
-                            <Form.Control id="inlineFormInputGroup" placeholder="Password" value={credentials.password} onChange={onChange} />
+                            <Form.Control type="password" id="password" name="password" placeholder="Password" value={password} onChange={onChange} />
                         </InputGroup>
                     </Col>
                     <Col xs="auto">
@@ -67,7 +68,7 @@ const Login = (props) => {
                     </Col>
                     <Col xs="auto">
                         <Button type="submit" className="mb-2">
-                            Bheju?
+                            Chal
                         </Button>
                     </Col>
                 </Form>
