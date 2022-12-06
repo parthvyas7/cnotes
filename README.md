@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to Change pharre 👋</h1>
 <p>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/parthvyas7/cnotes">
   <a href="https://unlicense.org" target="_blank">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/parthvyas7/cnotes">
     <img alt="License: UNLICENSE" src="https://img.shields.io/badge/License-UNLICENSE-yellow.svg" />
   </a>
 </p>
