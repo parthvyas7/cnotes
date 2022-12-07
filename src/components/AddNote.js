@@ -19,7 +19,6 @@ const AddNote = (props) => {
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })
     }
-    const [open, setOpen] = useState(false);
     return (
         <Container>
             <h1 className="display-1">Naye change pharre</h1>
