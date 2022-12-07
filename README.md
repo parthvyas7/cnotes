@@ -8,16 +8,8 @@
 
 > Change pharre is a note-taking app for managing personal notes, capturing your thoughts and accessing them from any device. It has been developed with MERN WebDev stack.
 
-<img src="./app_previews/1l.png" alt="App preview" style="height: 70%; width:70%;"/>
-<img src="./app_previews/2l.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/3l.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/4l.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/5l.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/6l.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/1p.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/2p.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/3p.png" alt="App preview" style="height: 70%; width:70%"/>
-<img src="./app_previews/4p.png" alt="App preview" style="height: 70%; width:70%"/>
+<img src="./app_previews/Web.gif" alt="App preview"/>
+<img src="./app_previews/MobileWeb.gif" alt="App preview"/>
 
 ## Install
 
