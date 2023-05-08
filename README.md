@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Change pharre 👋</h1>
+<h1 align="center">Welcome to Cloud Notes 👋</h1>
 <p>
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/parthvyas7/cnotes">
   <a href="https://unlicense.org" target="_blank">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Change pharre is a note-taking app for managing personal notes, capturing your thoughts and accessing them from any device. It has been developed with MERN WebDev stack.
+> Cloud Notes is a simple web-based note-taking app developed using MongoDB, Express.js, React.js, and Node.js. It allows users to create, read, update, and delete notes, as well as search for specific notes using keywords. CNotes also includes a user authentication feature to ensure the security and privacy of the notes.
 
 <img src="./app_previews/Web.gif" alt="App preview"/>
 <img src="./app_previews/MobileWeb.gif" alt="App preview"/>
